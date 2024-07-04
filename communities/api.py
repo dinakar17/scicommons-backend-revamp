@@ -465,6 +465,8 @@ def send_invitation(request, community_id: int, payload: InviteSchema):
         community_id=community_id, email=payload.email, username=payload.username
     ).first()
 
+    print(request)
+
     if existing_invitation:
         return 400, "An invitation has already been sent to this user."
 
